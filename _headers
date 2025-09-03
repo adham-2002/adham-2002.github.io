@@ -1,0 +1,9 @@
+/* HTML Files */
+Cache-Control: public, max-age=0, must-revalidate
+
+/* CSS Files */
+/css/* 
+Cache-Control: public, max-age=31536000, immutable
+/* Image Files (e.g., jpg, png, gif, svg) */
+*.(jpg|jpeg|png|gif|svg) 
+Cache-Control: public, max-age=31536000, immutable
