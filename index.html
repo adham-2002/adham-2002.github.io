@@ -45,25 +45,87 @@
   </head>
 
   <body>
-    <!-- 3D Holographic Loading Screen -->
+    <!-- Quantum Atom Loading Screen -->
     <div class="loading-screen" id="loading-screen">
       <div class="loading-container">
-        <div class="loading-logo">
-          <span>AE</span>
+        <!-- Atom Quantum Loader -->
+        <div class="quantum-atom-loader">
+          <!-- Energy Field Background -->
+          <div class="energy-field"></div>
+          <div class="energy-field energy-field-2"></div>
+          <div class="energy-field energy-field-3"></div>
+          
+          <!-- Quantum Nucleus with Energy Core -->
+          <div class="quantum-nucleus">
+            <div class="nucleus-core"></div>
+            <div class="nucleus-ring ring-1"></div>
+            <div class="nucleus-ring ring-2"></div>
+            <div class="nucleus-ring ring-3"></div>
+            <div class="energy-burst"></div>
+          </div>
+          
+          <!-- Electron Orbit System 1 -->
+          <div class="orbit-system orbit-1">
+            <div class="orbit-path"></div>
+            <div class="electron">
+              <div class="electron-core"></div>
+              <div class="electron-trail"></div>
+            </div>
+          </div>
+          
+          <!-- Electron Orbit System 2 -->
+          <div class="orbit-system orbit-2">
+            <div class="orbit-path"></div>
+            <div class="electron">
+              <div class="electron-core"></div>
+              <div class="electron-trail"></div>
+            </div>
+          </div>
+          
+          <!-- Electron Orbit System 3 -->
+          <div class="orbit-system orbit-3">
+            <div class="orbit-path"></div>
+            <div class="electron">
+              <div class="electron-core"></div>
+              <div class="electron-trail"></div>
+            </div>
+          </div>
+          
+          <!-- Quantum Particles -->
+          <div class="quantum-particle particle-1"></div>
+          <div class="quantum-particle particle-2"></div>
+          <div class="quantum-particle particle-3"></div>
+          <div class="quantum-particle particle-4"></div>
+          <div class="quantum-particle particle-5"></div>
+          <div class="quantum-particle particle-6"></div>
+          
+          <!-- Energy Waves -->
+          <div class="energy-wave wave-1"></div>
+          <div class="energy-wave wave-2"></div>
+          <div class="energy-wave wave-3"></div>
         </div>
-        <div class="loading-spinner"></div>
-        <p class="loading-text">Portfolio</p>
+        
+        <p class="loading-text">
+          <span class="text-glitch" data-text="Initializing System">Initializing System</span>
+        </p>
         <div class="loading-progress">
-          <div class="progress-dots"></div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill"></div>
+            <div class="progress-glow"></div>
+          </div>
+          <div class="loading-percentage">0%</div>
         </div>
       </div>
     </div>
 
+    <!-- Main Content Wrapper (hidden during loading) -->
+    <div class="main-content" id="main-content">
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
       <div class="nav-container">
         <!-- Logo -->
-        <div class="nav-logo">
+        <div class="nav-logo" id="logo" title="Click me! 🎉">
           <span>Adham ElGanzouri</span>
+          <span class="click-counter" id="click-counter" style="display: none;"></span>
         </div>
 
         <!-- Navigation Menu -->
@@ -71,20 +133,27 @@
           <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
           <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
           <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+          <li role="none"><a href="#courses" class="nav-link" role="menuitem">Courses</a></li>
           <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
           <li role="none"><a href="#services" class="nav-link" role="menuitem">Services</a></li>
-          <li role="none"><a href="#testimonials" class="nav-link" role="menuitem">Testimonials</a></li>
+          <li role="none"><a href="#team" class="nav-link" role="menuitem">Team</a></li>
           <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
         </ul>
 
         <!-- Theme Toggle (separate from menubar) -->
-        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
-          <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
-          </svg>
-          <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
-            <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/>
-          </svg>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <div class="toggle-track">
+            <div class="toggle-thumb">
+              <svg class="theme-icon moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+              </svg>
+              <svg class="theme-icon sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"/>
+              </svg>
+            </div>
+            <span class="toggle-label dark-label">Dark</span>
+            <span class="toggle-label light-label">Light</span>
+          </div>
         </button>
         </div>
 
@@ -94,11 +163,6 @@
           <span></span>
           <span></span>
         </button>
-      </div>
-
-      <!-- Progress Bar -->
-      <div class="progress-container" role="progressbar" aria-label="Page scroll progress">
-        <div class="progress-bar" id="progress-bar"></div>
       </div>
     </nav>
 
@@ -162,22 +226,7 @@
                 />
               </svg>
             </a>
-            <a
-              href="https://github.com/adham-2002"
-              class="social-link"
-              title="GitHub"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                />
-              </svg>
-            </a>
+
           </div>
         </div>
 
@@ -522,109 +571,341 @@
     </section>
 
     <!-- ========================================
+         UDEMY COURSES SHOWCASE SECTION
+         ======================================== -->
+    <section id="udemy-courses" class="udemy-courses">
+      <div class="container">
+        <h2 class="section-title fade-in">Online Certifications</h2>
+        <p class="section-subtitle fade-in">Specialized courses from industry experts</p>
+        
+        <div class="udemy-showcase-wrapper fade-in">
+          <!-- Navigation Arrows -->
+          <button class="udemy-nav-btn udemy-prev" aria-label="Previous course">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="udemy-nav-btn udemy-next" aria-label="Next course">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+
+          <!-- 3D Carousel Container -->
+          <div class="udemy-carousel-scene">
+            <div class="udemy-carousel-3d">
+              
+              <!-- Course Card 1 -->
+              <div class="udemy-card">
+                <div class="udemy-card-inner">
+                  <!-- Front Side -->
+                  <div class="udemy-card-front">
+                    <div class="udemy-card-header">
+                      <div class="udemy-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        <span>Certified</span>
+                      </div>
+                      <img src="https://via.placeholder.com/400x225/5624d0/ffffff?text=Course+Thumbnail" 
+                           alt="Course thumbnail" 
+                           class="udemy-thumbnail">
+                    </div>
+                    <div class="udemy-card-content">
+                      <h3 class="udemy-course-title">Complete Node.js Developer Course</h3>
+                      <p class="udemy-instructor">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        Instructor Name
+                      </p>
+                      <div class="udemy-meta">
+                        <span class="udemy-duration">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                          </svg>
+                          40 hours
+                        </span>
+                        <span class="udemy-date">2024</span>
+                      </div>
+                      <div class="udemy-skills">
+                        <span class="udemy-skill-tag">Node.js</span>
+                        <span class="udemy-skill-tag">Express</span>
+                        <span class="udemy-skill-tag">MongoDB</span>
+                      </div>
+                    </div>
+                    <div class="udemy-card-footer">
+                      <span class="flip-hint">Click to view details</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Back Side -->
+                  <div class="udemy-card-back">
+                    <div class="udemy-back-content">
+                      <h4>What I Learned</h4>
+                      <ul class="udemy-learnings">
+                        <li>Building RESTful APIs with Express.js</li>
+                        <li>MongoDB database integration</li>
+                        <li>Authentication & Authorization</li>
+                        <li>Async/Await and Promises</li>
+                        <li>Error handling best practices</li>
+                      </ul>
+                      <div class="udemy-certificate-info">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                        </svg>
+                        <span>Certificate ID: UC-XXXXXXXX</span>
+                      </div>
+                      <a href="#" class="udemy-cert-btn" target="_blank">
+                        <span>View Certificate</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                          <path d="M15 3h6v6"/>
+                          <path d="M10 14L21 3"/>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="udemy-card-footer">
+                      <span class="flip-hint">Click to go back</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Course Card 2 -->
+              <div class="udemy-card">
+                <div class="udemy-card-inner">
+                  <!-- Front Side -->
+                  <div class="udemy-card-front">
+                    <div class="udemy-card-header">
+                      <div class="udemy-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        <span>Certified</span>
+                      </div>
+                      <img src="https://via.placeholder.com/400x225/0073e6/ffffff?text=Course+Thumbnail" 
+                           alt="Course thumbnail" 
+                           class="udemy-thumbnail">
+                    </div>
+                    <div class="udemy-card-content">
+                      <h3 class="udemy-course-title">Docker & Kubernetes: The Complete Guide</h3>
+                      <p class="udemy-instructor">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        Instructor Name
+                      </p>
+                      <div class="udemy-meta">
+                        <span class="udemy-duration">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                          </svg>
+                          35 hours
+                        </span>
+                        <span class="udemy-date">2024</span>
+                      </div>
+                      <div class="udemy-skills">
+                        <span class="udemy-skill-tag">Docker</span>
+                        <span class="udemy-skill-tag">Kubernetes</span>
+                        <span class="udemy-skill-tag">CI/CD</span>
+                      </div>
+                    </div>
+                    <div class="udemy-card-footer">
+                      <span class="flip-hint">Click to view details</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Back Side -->
+                  <div class="udemy-card-back">
+                    <div class="udemy-back-content">
+                      <h4>What I Learned</h4>
+                      <ul class="udemy-learnings">
+                        <li>Container creation and management</li>
+                        <li>Kubernetes cluster deployment</li>
+                        <li>Service orchestration patterns</li>
+                        <li>CI/CD pipeline integration</li>
+                        <li>Production deployment strategies</li>
+                      </ul>
+                      <div class="udemy-certificate-info">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                        </svg>
+                        <span>Certificate ID: UC-XXXXXXXX</span>
+                      </div>
+                      <a href="#" class="udemy-cert-btn" target="_blank">
+                        <span>View Certificate</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                          <path d="M15 3h6v6"/>
+                          <path d="M10 14L21 3"/>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="udemy-card-footer">
+                      <span class="flip-hint">Click to go back</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Course Card 3 -->
+              <div class="udemy-card">
+                <div class="udemy-card-inner">
+                  <!-- Front Side -->
+                  <div class="udemy-card-front">
+                    <div class="udemy-card-header">
+                      <div class="udemy-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        <span>Certified</span>
+                      </div>
+                      <img src="https://via.placeholder.com/400x225/ec5252/ffffff?text=Course+Thumbnail" 
+                           alt="Course thumbnail" 
+                           class="udemy-thumbnail">
+                    </div>
+                    <div class="udemy-card-content">
+                      <h3 class="udemy-course-title">AWS Certified Solutions Architect</h3>
+                      <p class="udemy-instructor">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        Instructor Name
+                      </p>
+                      <div class="udemy-meta">
+                        <span class="udemy-duration">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                          </svg>
+                          28 hours
+                        </span>
+                        <span class="udemy-date">2024</span>
+                      </div>
+                      <div class="udemy-skills">
+                        <span class="udemy-skill-tag">AWS</span>
+                        <span class="udemy-skill-tag">Cloud</span>
+                        <span class="udemy-skill-tag">Architecture</span>
+                      </div>
+                    </div>
+                    <div class="udemy-card-footer">
+                      <span class="flip-hint">Click to view details</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Back Side -->
+                  <div class="udemy-card-back">
+                    <div class="udemy-back-content">
+                      <h4>What I Learned</h4>
+                      <ul class="udemy-learnings">
+                        <li>AWS core services (EC2, S3, RDS)</li>
+                        <li>VPC and networking concepts</li>
+                        <li>Security best practices</li>
+                        <li>Scalable architecture design</li>
+                        <li>Cost optimization strategies</li>
+                      </ul>
+                      <div class="udemy-certificate-info">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                        </svg>
+                        <span>Certificate ID: UC-XXXXXXXX</span>
+                      </div>
+                      <a href="#" class="udemy-cert-btn" target="_blank">
+                        <span>View Certificate</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                          <path d="M15 3h6v6"/>
+                          <path d="M10 14L21 3"/>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="udemy-card-footer">
+                      <span class="flip-hint">Click to go back</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
          SKILLS SECTION
          ======================================== -->
     <section id="skills" class="skills">
       <div class="container">
         <h2 class="section-title fade-in">Technical Skills</h2>
-        <div class="skills-grid">
-          <!-- Backend & Database Skills -->
-          <div class="skill-category fade-in">
-            <h3>Backend & Database</h3>
-            <div class="skill-item">
-              <span class="skill-name">Node.js</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Express.js</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">MongoDB</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="80%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">MySQL</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="75%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Redis</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="70%"></div>
-              </div>
-            </div>
+        
+        <!-- Minimal Icon Grid -->
+        <div class="skills-icon-grid fade-in">
+          <!-- Backend -->
+          <div class="skill-icon" data-tooltip="Node.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
           </div>
 
-          <!-- DevOps & Tools Skills -->
-          <div class="skill-category fade-in">
-            <h3>DevOps & Tools</h3>
-            <div class="skill-item">
-              <span class="skill-name">Docker</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Kubernetes</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="75%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Jenkins</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="70%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Ansible</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="70%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Terraform</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="65%"></div>
-              </div>
-            </div>
+          <div class="skill-icon" data-tooltip="Express.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" />
           </div>
 
-          <!-- Frontend Skills -->
-          <div class="skill-category fade-in">
-            <h3>Frontend</h3>
-            <div class="skill-item">
-              <span class="skill-name">HTML/CSS</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">JavaScript/TypeScript</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Tailwind CSS</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="80%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Angular</span>
-              <div class="skill-bar-container">
-                <div class="skill-bar" data-width="75%"></div>
-              </div>
-            </div>
+          <div class="skill-icon" data-tooltip="MongoDB">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="MySQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="Redis">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" />
+          </div>
+
+          <!-- DevOps -->
+          <div class="skill-icon" data-tooltip="Docker">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="Kubernetes">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="Jenkins">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="Ansible">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="Terraform">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" />
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-icon" data-tooltip="HTML5">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="CSS3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="JavaScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="TypeScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="Tailwind CSS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" />
+          </div>
+
+          <div class="skill-icon" data-tooltip="Angular">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" />
           </div>
         </div>
       </div>
@@ -779,171 +1060,240 @@
     </section>
 
     <!-- ========================================
-         TESTIMONIALS SECTION
+         TEAM & COLLABORATIONS SECTION
          ======================================== -->
-    <section id="testimonials" class="testimonials">
+    <section id="team" class="team">
       <div class="container">
-        <h2 class="section-title fade-in">What Clients Say</h2>
-        <div class="testimonials-grid">
-          <!-- Client Testimonial 1 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <div class="stars">
-                <span>★★★★★</span>
+        <h2 class="section-title scroll-reveal fade-in">Team & Collaborations</h2>
+        <p class="section-subtitle scroll-reveal fade-in">
+          Talented people I've had the pleasure of working with
+        </p>
+        
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-card scroll-reveal slide-up stagger-1">
+            <div class="team-member-image">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+                alt="Mohamed Salah"
+                loading="lazy"
+              />
+              <div class="team-overlay">
+                <div class="team-socials">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p>
-                "Adham delivered an exceptional backend API for our e-commerce
-                platform. His expertise in Node.js and MongoDB helped us achieve
-                40% faster response times. Professional, reliable, and highly
-                skilled."
-              </p>
             </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
-                  alt="Ahmed Hassan"
-                />
-              </div>
-              <div class="author-info">
-                <h3>Ahmed Hassan</h3>
-                <span>CTO, TechStart Solutions</span>
+            <div class="team-info">
+              <h3>Mohamed Salah</h3>
+              <span class="team-role">Frontend Developer</span>
+              <p class="team-description">
+                Collaborated on building responsive UI/UX for the e-commerce platform. Expertise in React and TypeScript.
+              </p>
+              <div class="team-tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">UI/UX</span>
               </div>
             </div>
           </div>
 
-          <!-- Client Testimonial 2 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <div class="stars">
-                <span>★★★★★</span>
+          <!-- Team Member 2 -->
+          <div class="team-card scroll-reveal slide-up stagger-2">
+            <div class="team-member-image">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face"
+                alt="Sara Ahmed"
+                loading="lazy"
+              />
+              <div class="team-overlay">
+                <div class="team-socials">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p>
-                "Outstanding DevOps implementation! Adham transformed our
-                deployment process with Docker and Kubernetes, reducing
-                deployment time by 60%. His automation skills are top-notch."
-              </p>
             </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b123?w=60&h=60&fit=crop&crop=face"
-                  alt="Sarah Mohamed"
-                />
-              </div>
-              <div class="author-info">
-                <h3>Sarah Mohamed</h3>
-                <span>Product Manager, CloudNine</span>
+            <div class="team-info">
+              <h3>Sara Ahmed</h3>
+              <span class="team-role">DevOps Engineer</span>
+              <p class="team-description">
+                Worked together on CI/CD pipeline automation using Jenkins and Docker. Enhanced deployment efficiency by 60%.
+              </p>
+              <div class="team-tags">
+                <span class="tag">DevOps</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Jenkins</span>
               </div>
             </div>
           </div>
 
-          <!-- Client Testimonial 3 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <div class="stars">
-                <span>★★★★★</span>
+          <!-- Team Member 3 -->
+          <div class="team-card scroll-reveal slide-up stagger-3">
+            <div class="team-member-image">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
+                alt="Omar Khaled"
+                loading="lazy"
+              />
+              <div class="team-overlay">
+                <div class="team-socials">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p>
-                "Adham's database optimization work was incredible. He
-                redesigned our MongoDB schema and improved query performance by
-                50%. Great communication and delivers on time."
-              </p>
             </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
-                  alt="Omar Khaled"
-                />
-              </div>
-              <div class="author-info">
-                <h3>Omar Khaled</h3>
-                <span>Lead Developer, DataFlow Inc</span>
+            <div class="team-info">
+              <h3>Omar Khaled</h3>
+              <span class="team-role">Full Stack Developer</span>
+              <p class="team-description">
+                Partner in developing the real-time chat application. Implemented WebSocket communication and database optimization.
+              </p>
+              <div class="team-tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">Socket.IO</span>
+                <span class="tag">MongoDB</span>
               </div>
             </div>
           </div>
 
-          <!-- Client Testimonial 4 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <div class="stars">
-                <span>★★★★★</span>
+          <!-- Team Member 4 -->
+          <div class="team-card scroll-reveal slide-up stagger-4">
+            <div class="team-member-image">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
+                alt="Nour Ali"
+                loading="lazy"
+              />
+              <div class="team-overlay">
+                <div class="team-socials">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p>
-                "Working with Adham on our chat application was amazing. His
-                Socket.IO implementation was flawless, and the real-time
-                features work perfectly. Highly recommended!"
-              </p>
             </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
-                  alt="Nour Ali"
-                />
-              </div>
-              <div class="author-info">
-                <h3>Nour Ali</h3>
-                <span>Founder, ChatConnect</span>
+            <div class="team-info">
+              <h3>Nour Ali</h3>
+              <span class="team-role">UI/UX Designer</span>
+              <p class="team-description">
+                Collaborated on designing intuitive user interfaces and creating seamless user experiences for web applications.
+              </p>
+              <div class="team-tags">
+                <span class="tag">Figma</span>
+                <span class="tag">UI Design</span>
+                <span class="tag">Prototyping</span>
               </div>
             </div>
           </div>
 
-          <!-- Client Testimonial 5 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <div class="stars">
-                <span>★★★★★</span>
+          <!-- Team Member 5 -->
+          <div class="team-card scroll-reveal slide-up stagger-5">
+            <div class="team-member-image">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face"
+                alt="Karim Farouk"
+                loading="lazy"
+              />
+              <div class="team-overlay">
+                <div class="team-socials">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p>
-                "Adham's security implementation exceeded our expectations. His
-                JWT authentication and rate limiting solutions made our API
-                rock-solid. Expert level skills!"
-              </p>
             </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face"
-                  alt="Karim Farouk"
-                />
-              </div>
-              <div class="author-info">
-                <h3>Karim Farouk</h3>
-                <span>Security Lead, SecureApps</span>
+            <div class="team-info">
+              <h3>Karim Farouk</h3>
+              <span class="team-role">Security Specialist</span>
+              <p class="team-description">
+                Worked on implementing security best practices, JWT authentication, and data encryption for enterprise applications.
+              </p>
+              <div class="team-tags">
+                <span class="tag">Security</span>
+                <span class="tag">JWT</span>
+                <span class="tag">Encryption</span>
               </div>
             </div>
           </div>
 
-          <!-- Client Testimonial 6 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <div class="stars">
-                <span>★★★★★</span>
+          <!-- Team Member 6 -->
+          <div class="team-card scroll-reveal slide-up stagger-6">
+            <div class="team-member-image">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face"
+                alt="Youssef Mahmoud"
+                loading="lazy"
+              />
+              <div class="team-overlay">
+                <div class="team-socials">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <p>
-                "The CI/CD pipeline Adham set up using Jenkins and Docker has
-                revolutionized our development workflow. Automated deployments
-                are now seamless. Excellent work!"
-              </p>
             </div>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=60&h=60&fit=crop&crop=face"
-                  alt="Mona Rashid"
-                />
-              </div>
-              <div class="author-info">
-                <h3>Mona Rashid</h3>
-                <span>DevOps Manager, AutoDeploy</span>
+            <div class="team-info">
+              <h3>Youssef Mahmoud</h3>
+              <span class="team-role">Mobile Developer</span>
+              <p class="team-description">
+                Collaborated on REST API design and backend integration for cross-platform mobile applications using React Native.
+              </p>
+              <div class="team-tags">
+                <span class="tag">React Native</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Mobile</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> <!-- Add this closing tag for Team section -->
 
     <!-- ========================================
          CONTACT SECTION
@@ -1115,5 +1465,6 @@
          JAVASCRIPT
          ======================================== -->
     <script src="js/script.js"></script>
+    </div> <!-- Close main-content wrapper -->
   </body>
 </html>
