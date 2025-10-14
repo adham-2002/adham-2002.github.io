@@ -12,6 +12,18 @@
 }
 
 /* ========================================
+   CUSTOM TEXT SELECTION STYLE
+   ======================================== */
+::selection {
+  background: #22c55e;
+  color: #fff;
+}
+::-moz-selection {
+  background: #22c55e;
+  color: #fff;
+}
+
+/* ========================================
    CUSTOM SCROLLBAR - CREATIVE DESIGN
    ======================================== */
 
