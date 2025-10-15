@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update navbar background on initial load
   updateNavbarBackground();
 
-
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       body.classList.toggle("dark");
