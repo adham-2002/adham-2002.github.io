@@ -1,5 +1,8 @@
 // DOM Content Loaded Event
 document.addEventListener("DOMContentLoaded", function () {
+  // Mark portfolio as initialized to prevent conflicts with modular JS
+  window.portfolioInitialized = true;
+
   // ========================================
   // EASTER EGG HINT
   // ========================================
@@ -948,14 +951,29 @@ Built with vanilla HTML, CSS, and JavaScript
           centerIndex = index;
         }
 
-        // Remove highlight
+        // Remove highlight and reset transform
         card.classList.remove("centered");
+        const innerElement = card.querySelector(".udemy-card-inner");
+        if (innerElement && !card.classList.contains("flipped")) {
+          innerElement.style.transform = "";
+        }
       });
 
-      // Highlight center card
+      // Highlight center card and apply scale
       if (centerCard && minDiff < anglePerCard / 2) {
         centerCard.classList.add("centered");
         currentCardIndex = centerIndex;
+
+        // Apply scale to centered card's inner element
+        const innerElement = centerCard.querySelector(".udemy-card-inner");
+        if (innerElement) {
+          const isFlipped = centerCard.classList.contains("flipped");
+          if (isFlipped) {
+            innerElement.style.transform = "scale(1.05) rotateY(180deg)";
+          } else {
+            innerElement.style.transform = "scale(1.05)";
+          }
+        }
       }
     }
 
@@ -1121,41 +1139,72 @@ Built with vanilla HTML, CSS, and JavaScript
     );
 
     // Card flip on click
-    cards.forEach((card) => {
+    cards.forEach((card, index) => {
       card.addEventListener("click", (e) => {
-        // Don't do anything if clicking certificate button
+        const isCentered = card.classList.contains("centered");
+        console.log(`🎴 Card ${index} clicked, centered:`, isCentered);
+
+        // If clicking certificate button on the back, don't flip
         if (e.target.closest(".udemy-cert-btn")) {
           e.stopPropagation();
           return;
         }
 
-        // If card is centered, flip it
-        if (card.classList.contains("centered")) {
-          e.stopPropagation();
-          card.classList.toggle("flipped");
-          isAutoRotating = false;
+        e.stopPropagation();
 
-          // Resume after 6 seconds
-          setTimeout(() => {
-            if (!card.matches(":hover")) {
-              isAutoRotating = true;
-            }
-          }, 6000);
+        // Determine which side was clicked
+        const clickedFront = !!e.target.closest(".udemy-card-front");
+        const clickedBack = !!e.target.closest(".udemy-card-back");
+
+        const wasFlipped = card.classList.contains("flipped");
+        let targetFlipped = wasFlipped;
+
+        // UX rule:
+        // - Clicking FRONT always opens details (flip to back)
+        // - Clicking BACK (except cert button) flips back to front
+        // - Otherwise, toggle
+        if (clickedFront) {
+          targetFlipped = true;
+        } else if (clickedBack) {
+          targetFlipped = false;
         } else {
-          // If not centered, rotate to center it
-          e.stopPropagation();
+          targetFlipped = !wasFlipped;
+        }
+
+        if (targetFlipped) {
+          card.classList.add("flipped");
+        } else {
+          card.classList.remove("flipped");
+        }
+
+        // Apply transform directly to inner element to override CSS
+        const innerElement = card.querySelector(".udemy-card-inner");
+        if (innerElement) {
+          if (targetFlipped) {
+            innerElement.style.transform = isCentered
+              ? "scale(1.05) rotateY(180deg)"
+              : "rotateY(180deg)";
+          } else {
+            innerElement.style.transform = isCentered ? "scale(1.05)" : "";
+          }
+          console.log(
+            `✨ Card ${index} flipped: ${targetFlipped}, transform: ${innerElement.style.transform}`
+          );
+        }
+
+        // If not centered, also center it so details are readable
+        if (!isCentered) {
           const cardIndex = parseInt(card.dataset.index);
+          console.log(`🎯 Also centering card ${cardIndex}`);
           goToCardByIndex(cardIndex);
         }
-      });
 
-      // Unflip when mouse leaves
-      card.addEventListener("mouseleave", () => {
+        // Resume after 6 seconds of inactivity
         setTimeout(() => {
-          if (card.classList.contains("flipped")) {
-            card.classList.remove("flipped");
+          if (!card.matches(":hover")) {
+            isAutoRotating = true;
           }
-        }, 500);
+        }, 6000);
       });
     });
 

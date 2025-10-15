@@ -1,0 +1,38 @@
+/* ========================================
+   MODULAR CSS - MAIN ENTRY POINT
+   Import all CSS modules for organized styling
+   ======================================== */
+
+/* Core Styles */
+@import url("modules/base.css");
+@import url("modules/scrollbar.css");
+@import url("modules/loading.css");
+@import url("modules/components.css");
+
+/* Navigation & Layout */
+@import url("modules/navigation.css");
+
+/* Section Styles */
+@import url("modules/sections/hero.css");
+@import url("modules/sections/projects.css");
+@import url("modules/sections/about.css");
+@import url("modules/sections/udemy-courses.css");
+@import url("modules/sections/skills.css");
+@import url("modules/sections/services.css");
+@import url("modules/sections/team.css");
+@import url("modules/sections/contact.css");
+@import url("modules/sections/footer.css");
+
+/* Animations & Effects */
+@import url("modules/animations.css");
+
+/* Responsive Design */
+@import url("modules/responsive.css");
+
+/* Note: If @import is not supported in your environment,
+   you can include these files directly in your HTML <head>:
+   
+   <link rel="stylesheet" href="css/modules/base.css" />
+   <link rel="stylesheet" href="css/modules/scrollbar.css" />
+   etc...
+*/

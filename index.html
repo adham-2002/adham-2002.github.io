@@ -38,10 +38,20 @@
       rel="stylesheet"
     />
 
+    <!-- MODULAR CSS APPROACH: Option 1 - Single Import -->
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    
+    <!-- MODULAR CSS APPROACH: Option 2 - Individual Modules (Better for performance) -->
+    <link rel="stylesheet" href="css/modules/base.css" />
+    <link rel="stylesheet" href="css/modules/scrollbar.css" />
+    <link rel="stylesheet" href="css/modules/components.css" />
+    
+    <!-- Keep original styles.css for backward compatibility (can remove after testing) -->
     <link rel="stylesheet" href="css/styles.css" />
     
     <!-- Preload critical scripts -->
-    <link rel="preload" href="js/script.js" as="script" />
+    <link rel="preload" href="js/main.js" as="script" />
+    <link rel="preload" href="js/sections-loader.js" as="script" />
   </head>
 
   <body>
@@ -1462,8 +1472,23 @@
     </script>
 
     <!-- ========================================
-         JAVASCRIPT
+         MODULAR JAVASCRIPT
          ======================================== -->
+    
+    <!-- Section Loader (loads modular HTML sections) -->
+    <script src="js/sections-loader.js"></script>
+    
+    <!-- Modular JS Modules -->
+    <script src="js/modules/theme-toggle.js"></script>
+    <script src="js/modules/navigation.js"></script>
+    <script src="js/modules/loading.js"></script>
+    <script src="js/modules/easter-egg.js"></script>
+    <script src="js/modules/animations.js"></script>
+    
+    <!-- Main JS (initializes all modules) -->
+    <script src="js/main.js"></script>
+    
+    <!-- Keep original script.js for backward compatibility (can remove after testing) -->
     <script src="js/script.js"></script>
     </div> <!-- Close main-content wrapper -->
   </body>

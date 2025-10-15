@@ -3141,7 +3141,7 @@ section:first-of-type {
   margin-left: -190px;
   margin-top: -275px;
   perspective: 1000px;
-  transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
   transition: transform 0.6s ease;
   pointer-events: all;
 }
@@ -3151,19 +3151,19 @@ section:first-of-type {
   z-index: 50;
 }
 
+.udemy-card.centered .udemy-card-inner {
+  transform: scale(1.05);
+}
+
+.udemy-card.centered.flipped .udemy-card-inner {
+  transform: scale(1.05) rotateY(180deg);
+}
+
 .udemy-card.centered .udemy-card-front,
 .udemy-card.centered .udemy-card-back {
   box-shadow: 0 30px 80px rgba(34, 197, 94, 0.5),
     0 0 60px rgba(34, 197, 94, 0.3);
   border-color: rgba(34, 197, 94, 0.6);
-}
-
-.udemy-card.centered .udemy-card-front {
-  transform: scale(1.05);
-}
-
-.udemy-card.centered .udemy-card-back {
-  transform: rotateY(180deg) scale(1.05);
 }
 
 .udemy-card-inner {
@@ -3172,10 +3172,12 @@ section:first-of-type {
   height: 100%;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 
 .udemy-card.flipped .udemy-card-inner {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .udemy-card-front,
@@ -3194,6 +3196,13 @@ section:first-of-type {
   cursor: pointer;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
   transition: all 0.4s ease;
+  top: 0;
+  left: 0;
+}
+
+.udemy-card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
 }
 
 .udemy-card-back {
@@ -3313,6 +3322,8 @@ section:first-of-type {
   color: #64748b;
   font-size: 0.85rem;
   font-style: italic;
+  pointer-events: none; /* Don't block clicks */
+  user-select: none; /* Can't be selected */
 }
 
 /* Back Side Content */
